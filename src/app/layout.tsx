@@ -1,3 +1,5 @@
+import Navbar from "@/components/Navbar";
+import { Toaster } from "@/components/ui/Toaster";
 import "@/styles/globals.css";
 
 export const metadata = {
@@ -7,12 +9,23 @@ export const metadata = {
 
 export default function RootLayout({
   children,
+  authModal,
 }: {
   children: React.ReactNode;
+  authModal: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html
+      lang="en"
+      className="bg-white text-dark px-[15px] lg:px-[5vw] 2xl:px-[9vw] font-primary"
+    >
+      <body className="min-h-screen">
+        {/* @ts-expect-error server component*/}
+        <Navbar />
+        {authModal}
+        <div className="pt-16 lg:pt-20 h-full w-full">{children}</div>
+        <Toaster />
+      </body>
     </html>
   );
 }

@@ -26,6 +26,7 @@ module.exports = {
       fontFamily: {
         primary: ["Work Sans", "sans-serif"],
         special: ["Lobster", "cursive"],
+        secoundary: ["Merriweather", "sans-serif"],
       },
     },
   },

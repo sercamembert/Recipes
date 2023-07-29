@@ -1,4 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Work+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Merriweather&family=Work+Sans&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer recipe {
+  .recipe-image {
+    @apply w-[85%] lg:w-[60%] m-auto  rounded-md flex items-center justify-center;
+  }
+  .recipe-choose {
+    @apply w-[85%] h-[230px] sm:h-[400px] lg:h-[500px] lg:w-[60%] m-auto rounded-md flex items-center justify-center;
+  }
+}

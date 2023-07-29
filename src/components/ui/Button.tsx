@@ -11,6 +11,7 @@ const buttonVariants = cva(
         default: "bg-primary text-white",
         rose: "text-dark bg-rose",
         bbq: "text-dark bg-bbq ",
+        login: "text-dark bg-white border  ",
       },
       size: {
         default: "h-10 py-2 px-4",
