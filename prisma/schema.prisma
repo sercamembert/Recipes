@@ -39,12 +39,86 @@ model Session {
 }
 
 model User {
-  id            String    @id @default(cuid())
+  id            String      @id @default(cuid())
   name          String?
-  email         String?   @unique
+  email         String?     @unique
   emailVerified DateTime?
+  recipes       Recipe[]
+  comments      Comment[]
+  favourites    Favourite[]
+
+  username String? @unique
 
   image    String?
   accounts Account[]
   sessions Session[]
+}
+
+model Recipe {
+  id            String       @id @default(cuid())
+  image         String
+  title         String
+  ingredients   Ingredient[]
+  steps         Step[]
+  prepTime      Int
+  peoples       Int
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+  author        User         @relation(fields: [authorId], references: [id])
+  authorId      String
+  comments      Comment[]
+  favourites    Favourite[]
+  category      Category     @relation(fields: [categoryId], references: [id])
+  categoryId    String
+  subcategory   Subcategory? @relation(fields: [subcategoryId], references: [id])
+  subcategoryId String?
+}
+
+model Ingredient {
+  id       String @id @default(cuid())
+  name     String
+  unit     String
+  recipe   Recipe @relation(fields: [recipeId], references: [id])
+  recipeId String
+}
+
+model Step {
+  id       String @id @default(cuid())
+  content  String
+  recipe   Recipe @relation(fields: [recipeId], references: [id])
+  recipeId String
+}
+
+model Comment {
+  id        String   @id @default(cuid())
+  text      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  author    User     @relation(fields: [authorId], references: [id])
+  authorId  String
+  recipe    Recipe   @relation(fields: [recipeId], references: [id])
+  recipeId  String
+}
+
+model Favourite {
+  id       String @id @default(cuid())
+  recipe   Recipe @relation(fields: [recipeId], references: [id])
+  recipeId String
+  user     User   @relation(fields: [userId], references: [id])
+  userId   String
+}
+
+model Category {
+  id          String        @id @default(cuid())
+  name        String
+  recipes     Recipe[]
+  Subcategory Subcategory[]
+}
+
+model Subcategory {
+  id         String   @id @default(cuid())
+  category   Category @relation(fields: [categoryId], references: [id])
+  name       String
+  recipes    Recipe[]
+  categoryId String
 }
