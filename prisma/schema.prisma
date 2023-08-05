@@ -54,29 +54,10 @@ model User {
   sessions Session[]
 }
 
-model Recipe {
-  id            String       @id @default(cuid())
-  image         String
-  title         String
-  ingredients   Ingredient[]
-  steps         Step[]
-  prepTime      Int
-  peoples       Int
-  createdAt     DateTime     @default(now())
-  updatedAt     DateTime     @updatedAt
-  author        User         @relation(fields: [authorId], references: [id])
-  authorId      String
-  comments      Comment[]
-  favourites    Favourite[]
-  category      Category     @relation(fields: [categoryId], references: [id])
-  categoryId    String
-  subcategory   Subcategory? @relation(fields: [subcategoryId], references: [id])
-  subcategoryId String?
-}
-
 model Ingredient {
   id       String @id @default(cuid())
   name     String
+  amount   Int
   unit     String
   recipe   Recipe @relation(fields: [recipeId], references: [id])
   recipeId String
@@ -84,9 +65,27 @@ model Ingredient {
 
 model Step {
   id       String @id @default(cuid())
-  content  String
+  content  String @db.Text
   recipe   Recipe @relation(fields: [recipeId], references: [id])
   recipeId String
+}
+
+model Recipe {
+  id          String       @id @default(cuid())
+  image       String
+  title       String
+  ingredients Ingredient[]
+  steps       Step[]
+  prepTime    Int
+  peoples     Int
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  author      User         @relation(fields: [authorId], references: [id])
+  authorId    String
+  comments    Comment[]
+  favourites  Favourite[]
+  category    String
+  subcategory String
 }
 
 model Comment {
@@ -106,19 +105,4 @@ model Favourite {
   recipeId String
   user     User   @relation(fields: [userId], references: [id])
   userId   String
-}
-
-model Category {
-  id          String        @id @default(cuid())
-  name        String
-  recipes     Recipe[]
-  Subcategory Subcategory[]
-}
-
-model Subcategory {
-  id         String   @id @default(cuid())
-  category   Category @relation(fields: [categoryId], references: [id])
-  name       String
-  recipes    Recipe[]
-  categoryId String
 }
