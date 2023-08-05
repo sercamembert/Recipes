@@ -13,7 +13,7 @@ const Navbar = async () => {
   const session = await getAuthSession();
 
   return (
-    <div className="h-16 lg:h-20 py-2 flex items-center fixed top-0 z-10 left-0 right-0 px-[15px] lg:px-[5vw] 2xl:px-[9vw]">
+    <div className="h-16 lg:h-20 py-2 flex items-center fixed top-0 z-10 left-0 right-0 px-[15px] lg:px-[5vw] 2xl:px-[9vw] bg-green-50">
       <Logo />
 
       <Categories />
