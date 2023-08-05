@@ -4,10 +4,7 @@
 @tailwind utilities;
 
 @layer recipe {
-  .recipe-image {
-    @apply w-[85%] lg:w-[60%] m-auto  rounded-md flex items-center justify-center;
-  }
-  .recipe-choose {
-    @apply w-[85%] h-[230px] sm:h-[400px] lg:h-[500px] lg:w-[60%] m-auto rounded-md flex items-center justify-center;
+  .recipe-img {
+    @apply w-full h-[300px] sm:w-[400px] sm:h-[400px] lg:h-[500px] lg:w-[500px] xl:w-[750px]  xl:h-[600px] 2xl:w-[800px] m-auto rounded-md flex items-center justify-center;
   }
 }
