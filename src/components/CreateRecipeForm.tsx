@@ -347,7 +347,7 @@ const CreateRecipeForm: FC<CreateRecipeFormProps> = ({ user }) => {
               {/* Number of people */}
               <div className="flex flex-col gap-2 mb-5">
                 <p className="text-xl lg:text-2xl font-medium font-secoundary">
-                  Number of people
+                  Number of servings
                 </p>
                 <Slider
                   defaultValue={[peoplesAmt]}
