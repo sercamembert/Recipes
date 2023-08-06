@@ -432,6 +432,7 @@ const CreateRecipeForm: FC<CreateRecipeFormProps> = ({ user }) => {
                         <option value="pcs">pcs</option>
                         <option value="package">package</option>
                         <option value="teaspoon">teaspoon</option>
+                        <option value="cup">cup</option>
                       </select>
                       {index > 0 ? (
                         <Trash2
