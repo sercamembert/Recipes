@@ -41,6 +41,6 @@ export async function PATCH(req: Request) {
       return new Response(error.message, { status: 400 });
     }
 
-    return new Response("Could not add recipe to favourites", { status: 500 });
+    return new Response("Could not add recipe to favourite", { status: 500 });
   }
 }
