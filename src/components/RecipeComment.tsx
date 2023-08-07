@@ -26,7 +26,9 @@ const RecipeComment = ({ comments, recipeId }: Props) => {
           <div className="flex flex-col gap-0">
             <p className="text-sm font-semibold">
               {comment.author.name}{" "}
-              {formatTimeToNow(new Date(comment.createdAt))}
+              <span className="font-light ml-1">
+                {formatTimeToNow(new Date(comment.createdAt))}
+              </span>
             </p>
             <p className="text-sm">{comment.text}</p>
           </div>
