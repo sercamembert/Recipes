@@ -50,7 +50,8 @@ const FavouriteRecipes = ({ favouriteRecipes }: Props) => {
       }
       return toast({
         title: "Something went wrong",
-        description: "Your vote was not registered please try again.",
+        description:
+          "We could not remove checked recipes from favourite, please try again later.",
         variant: "destructive",
       });
     },
