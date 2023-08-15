@@ -53,28 +53,25 @@ const page = async ({ params }: PageProps) => {
   });
 
   return (
-    <>
-      <div className="w-full mt-5 mb-44 flex flex-col">
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-5">
-          <Image
-            src={recipe?.image}
-            alt="recipe photo"
-            width={1000}
-            height={1000}
-            className="max-h-[650px] rounded-md"
-          />
-          <RecipeInfo session={session} recipe={recipe} />
+    <div className="w-full mt-5 mb-44 flex flex-col">
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-5">
+        <Image
+          src={recipe?.image}
+          alt="recipe photo"
+          width={1000}
+          height={1000}
+          className="max-h-[650px] rounded-md"
+        />
+        <RecipeInfo session={session} recipe={recipe} />
 
-          <Ingredients ingredients={recipe.ingredients} />
+        <Ingredients ingredients={recipe.ingredients} />
 
-          <Steps steps={recipe.steps} />
-          <RecipeComment comments={comments} recipeId={recipeId} />
-        </div>
-        <h1 className="font-secoundary text-2xl mt-32 mb-4">Similar recipes</h1>
-        <SimilarRecipe recipes={similarRecipes} />
+        <Steps steps={recipe.steps} />
+        <RecipeComment comments={comments} recipeId={recipeId} />
       </div>
-      <Footer />
-    </>
+      <h1 className="font-secoundary text-2xl mt-32 mb-4">Similar recipes</h1>
+      <SimilarRecipe recipes={similarRecipes} />
+    </div>
   );
 };
 
