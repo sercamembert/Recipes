@@ -52,7 +52,6 @@ const page = async () => {
           <FavouriteRecipes favouriteRecipes={favouriteRecipes} />
         )}
       </div>
-      <Footer />
     </>
   );
 };

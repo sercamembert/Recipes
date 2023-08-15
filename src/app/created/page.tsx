@@ -6,6 +6,8 @@ import Image from "next/image";
 import { redirect } from "next/navigation";
 import Footer from "@/components/Footer";
 import CreatedRecipes from "@/components/CreatedRecipes";
+import { Button } from "@/components/ui/Button";
+import { Plus } from "lucide-react";
 
 const page = async () => {
   const session = await getAuthSession();
@@ -21,7 +23,7 @@ const page = async () => {
 
   return (
     <>
-      <div className="w-full relative mt-9 mb-16 min-h-screen">
+      <div className="w-full relative mt-9  h-screen">
         <div className="w-full flex flex-col items-center relative">
           <Image
             src={favouritesHeaderImg}
@@ -41,10 +43,17 @@ const page = async () => {
           </h1>
         </div>
         {createdRecipes.length == 0 ? (
-          <div className="flex justify-center items-center h-full mt-10">
+          <div className="flex gap-2  justify-center items-center h-full mt-10">
             <h1 className="text-center text-xl ">
               Looking like you dont create any recipe yet...
             </h1>
+            <Button
+              variant={"default"}
+              size={"xs"}
+              className="text-sm rounded-md p-1"
+            >
+              <Plus />
+            </Button>
           </div>
         ) : (
           <>
