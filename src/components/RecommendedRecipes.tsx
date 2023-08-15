@@ -8,12 +8,12 @@ interface Props {
   recipes: Recipe[];
 }
 
-const PopularRecipes = ({ recipes }: Props) => {
+const RecommendedRecipes = ({ recipes }: Props) => {
   return (
-    <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-4 gap-x-6 grid-rows-2 md:grid-rows-1">
+    <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-4 gap-x-6 grid-rows-2 md:grid-rows-1 mb-40">
       {recipes.map((recipe, index) => (
         <Link key={index} href={`/recipe/${recipe.id}`}>
-          <div className="flex flex-col bg-stepper rounded-md">
+          <div className="flex flex-col bg-rose rounded-md">
             <Image
               src={recipe.image}
               alt="photo of similar recipe"
@@ -33,4 +33,4 @@ const PopularRecipes = ({ recipes }: Props) => {
   );
 };
 
-export default PopularRecipes;
+export default RecommendedRecipes;

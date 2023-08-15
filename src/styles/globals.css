@@ -8,3 +8,7 @@
     @apply w-full h-[300px] sm:w-[400px] sm:h-[400px] lg:h-[500px] lg:w-[500px] xl:w-[750px]  xl:h-[600px] 2xl:w-[800px] m-auto rounded-md flex items-center justify-center;
   }
 }
+
+.balance {
+  text-wrap: balance;
+}
