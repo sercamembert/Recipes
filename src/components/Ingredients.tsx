@@ -8,7 +8,7 @@ interface Props {
 
 const Ingredients = ({ ingredients }: Props) => {
   return (
-    <div className="w-full lg:w-[75%] flex flex-col gap-4">
+    <div className="w-full lg:w-[80%] flex flex-col gap-4">
       <h1 className="text-2xl font-secoundary">Ingredints</h1>
       {ingredients.map((ingredient, index) => (
         <div
@@ -19,7 +19,7 @@ const Ingredients = ({ ingredients }: Props) => {
             <Checkbox />
             <p>{ingredient.name}</p>
           </div>
-          <div className="w-[90px] flex items-start">
+          <div className="w-[110px] flex items-start">
             <p>
               {ingredient.amount} {ingredient.unit}
             </p>
