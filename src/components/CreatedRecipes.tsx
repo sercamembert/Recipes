@@ -13,12 +13,9 @@ const CreatedRecipes = ({ createdRecipes }: Props) => {
   return (
     <div>
       <>
-        <div className="w-full absolute grid grid-cols-2 md:grid-cols-4 gap-4 grid-rows-2 lg:grid-rows-1">
+        <div className="w-full  grid grid-cols-2 md:grid-cols-4 gap-4 grid-rows-2 lg:grid-rows-1">
           {createdRecipes.map((recipe, index) => (
-            <div
-              key={index}
-              className="flex flex-col bg-rose rounded-md relative"
-            >
+            <div key={index} className="flex flex-col bg-rose rounded-md ">
               <Link href={`/recipe/${recipe.id}`}>
                 <Image
                   src={recipe.image}
@@ -38,7 +35,6 @@ const CreatedRecipes = ({ createdRecipes }: Props) => {
           ))}
         </div>
       </>
-      sss
     </div>
   );
 };
