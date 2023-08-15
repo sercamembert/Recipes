@@ -23,8 +23,8 @@ const page = async () => {
 
   return (
     <>
-      <div className="w-full relative mt-9  h-screen">
-        <div className="w-full flex flex-col items-center relative">
+      <div className="w-full  mt-9  mb-40">
+        <div className="w-full flex flex-col items-center relative ">
           <Image
             src={favouritesHeaderImg}
             alt="header image"
