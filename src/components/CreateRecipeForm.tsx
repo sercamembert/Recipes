@@ -429,10 +429,12 @@ const CreateRecipeForm: FC<CreateRecipeFormProps> = ({ user }) => {
                         <option value="">Select unit</option>
                         <option value="ml">ml</option>
                         <option value="g">g</option>
+                        <option value="kg">kg</option>
                         <option value="pcs">pcs</option>
                         <option value="package">package</option>
                         <option value="teaspoon">teaspoon</option>
                         <option value="cup">cup</option>
+                        <option value="tablespoon">tablespoon</option>
                       </select>
                       {index > 0 ? (
                         <Trash2
@@ -446,9 +448,9 @@ const CreateRecipeForm: FC<CreateRecipeFormProps> = ({ user }) => {
                     </div>
                     <p className="pl-3 text-xs text-red-600">
                       {ingredient.name.length < 3 ||
-                        (ingredient.name.length > 60 &&
-                          errors.ingredients?.[index]?.name?.message)}
-                      {}
+                      ingredient.name.length >= 60
+                        ? errors.ingredients?.[index]?.name?.message
+                        : null}
                     </p>
                   </div>
                 ))}
