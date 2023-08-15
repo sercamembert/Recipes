@@ -10,14 +10,9 @@ export const categories: CategoryData = {
     "Chicken Dishes",
     "Beef Dishes",
     "Pork Dishes",
+    "Barbeque",
   ],
-  Soups: [
-    "Cream Soups",
-    "Vegetable Soups",
-    "Meat Soups",
-    "Fish Soups",
-    "Cold Soups",
-  ],
+  Soups: ["Cream Soups", "Vegetable Soups", "Meat Soups", "Cold Soups"],
   Salads: ["Vegetable Salads", "Fruit Salads", "Pasta Salads", "Meat Salads"],
   Snacks: [
     "Meat Snacks",
