@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Providers from "@/components/Providers";
 import { Toaster } from "@/components/ui/Toaster";
@@ -16,18 +17,18 @@ export default function RootLayout({
   authModal: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className="bg-white text-dark px-[15px] lg:px-[5vw] 2xl:px-[9vw] font-primary"
-    >
-      <body className="min-h-screen">
+    <html lang="en" className="bg-white text-dark font-primary h-full ">
+      <body className="min-h-screen flex flex-col">
         <Providers>
           {/* @ts-expect-error server component*/}
           <Navbar />
           {authModal}
-          <div className="pt-16 lg:pt-20 h-full w-full">{children}</div>
+          <div className="pt-16 lg:pt-20 h-full w-full px-[15px] lg:px-[5vw] 2xl:px-[9vw]">
+            {children}
+          </div>
           <Toaster />
         </Providers>
+        <Footer />
       </body>
     </html>
   );
