@@ -328,16 +328,16 @@ const CreateRecipeForm: FC<CreateRecipeFormProps> = ({ user }) => {
               {/* Preparation time */}
               <div className="flex flex-col gap-2">
                 <p className="text-xl lg:text-2xl font-medium font-secoundary">
-                  Preparation time
+                  Total cooking time
                 </p>
                 <Slider
                   defaultValue={[prepTime]}
-                  max={120}
+                  max={180}
                   min={5}
                   step={5}
                   onValueChange={(e) => {
                     setPrepTime(e[0]);
-                    setValue("prepTime", prepTime);
+                    setValue("prepTime", e[0]);
                   }}
                   className="w-full sm:w-[65%]"
                 />
