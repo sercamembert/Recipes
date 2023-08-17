@@ -22,46 +22,46 @@ const Categories = () => {
           <NavigationMenuContent className="border-rose">
             <ul className="flex flex-col w-[174px] ">
               <Link
-                href="/"
+                href="/recipes/Main/default/auto"
                 className=" font-medium cursor-pointer bg-rose py-2 px-4 hover:brightness-75 ease-in-out duration-200"
               >
                 Main Dishes
               </Link>
               <Link
-                href="/"
+                href="/recipes/Soups/default/auto"
                 className=" font-medium cursor-pointer bg-rose py-2 px-4 hover:brightness-75 ease-in-out duration-200"
               >
                 Soups
               </Link>
               <Link
-                href="/"
+                href="/recipes/Salads/default/auto"
                 className=" font-medium cursor-pointer bg-rose py-2 px-4 hover:brightness-75 ease-in-out duration-200"
               >
                 Salads
               </Link>
               <Link
-                href="/"
+                href="/recipes/Snacks/default/auto"
                 className=" font-medium cursor-pointer bg-rose py-2 px-4 hover:brightness-75 ease-in-out duration-200"
               >
                 Snacks
               </Link>
               <Link
-                href="/"
+                href="/recipes/Desserts/default/auto"
                 className=" font-medium cursor-pointer bg-rose py-2 px-4 hover:brightness-75 ease-in-out duration-200"
               >
                 Desserts
               </Link>
               <Link
-                href="/"
+                href="/recipes/Cakes/default/auto"
                 className=" font-medium cursor-pointer bg-rose py-2 px-4 hover:brightness-75 ease-in-out duration-200"
               >
                 Cakes
               </Link>
               <Link
-                href="/"
+                href="/recipes/Barbeque/default/auto"
                 className=" font-medium cursor-pointer bg-rose py-2 px-4 hover:brightness-75 ease-in-out duration-200"
               >
-                Grill
+                Barbeque
               </Link>
             </ul>
           </NavigationMenuContent>
