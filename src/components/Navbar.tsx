@@ -4,7 +4,7 @@ import { Facebook, Instagram, Menu, Twitter, Youtube } from "lucide-react";
 import Link from "next/link";
 import Searchbar from "./Searchbar";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/Sheet";
-import Categories from "./Categories";
+import Categories from "./NavCategories";
 import NavbarUser from "./NavbarUser";
 import { getAuthSession } from "@/lib/auth";
 import { User } from "next-auth";
