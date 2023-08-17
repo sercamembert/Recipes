@@ -6,7 +6,6 @@ import saladsImg from "@/img/categories/salads.png";
 import snacksImg from "@/img/categories/snacks.png";
 import dessertsImg from "@/img/categories/desserts.png";
 import cakesImg from "@/img/categories/cakes.png";
-import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 interface Props {}
@@ -20,7 +19,7 @@ const HomeCategories = () => {
           src={mainDishesImg}
           alt="main dishes category"
           className="rounded-[50%] hover:brightness-75 ease-in-out duration-200 cursor-pointer"
-          onClick={() => router.push("/categories/")}
+          onClick={() => router.push("/recipes/Main/default/auto")}
         />
         <p className="text-center text-xl font-semibold">Main dishes</p>
       </div>
@@ -30,7 +29,7 @@ const HomeCategories = () => {
           className="rounded-[50%] hover:brightness-75 ease-in-out duration-200 cursor-pointer"
           src={soupsImg}
           alt="soups category "
-          onClick={() => router.push("/categories/")}
+          onClick={() => router.push("/recipes/Soups/default/auto")}
         />
         <p className="text-center text-xl font-semibold">Soups</p>
       </div>
@@ -40,7 +39,7 @@ const HomeCategories = () => {
           className="rounded-[50%] hover:brightness-75 ease-in-out duration-200 cursor-pointer"
           src={saladsImg}
           alt="salads category"
-          onClick={() => router.push("/categories/")}
+          onClick={() => router.push("/recipes/Salads/default/auto")}
         />
         <p className="text-center text-xl font-semibold">Salads</p>
       </div>
@@ -50,7 +49,7 @@ const HomeCategories = () => {
           className="rounded-[50%] hover:brightness-75 ease-in-out duration-200 cursor-pointer"
           src={snacksImg}
           alt="snacks category"
-          onClick={() => router.push("/categories/")}
+          onClick={() => router.push("/recipes/Snacks/default/auto")}
         />
         <p className="text-center text-xl font-semibold">Snacks</p>
       </div>
@@ -59,7 +58,7 @@ const HomeCategories = () => {
           className="rounded-[50%] hover:brightness-75 ease-in-out duration-200 cursor-pointer"
           src={dessertsImg}
           alt="desserts category"
-          onClick={() => router.push("/categories/")}
+          onClick={() => router.push("/recipes/Desserts/default/auto")}
         />
         <p className="text-center text-xl font-semibold">Desserts</p>
       </div>
@@ -68,7 +67,7 @@ const HomeCategories = () => {
           className="rounded-[50%] hover:brightness-75 ease-in-out duration-200  cursor-pointer"
           src={cakesImg}
           alt="cakes category"
-          onClick={() => router.push("/categories/")}
+          onClick={() => router.push("/recipes/Cakes/default/auto")}
         />
         <p className="text-center text-xl font-semibold">Cakes</p>
       </div>
