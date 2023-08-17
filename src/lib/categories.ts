@@ -36,4 +36,5 @@ export const categories: CategoryData = {
     "No-Bake Cakes",
     "Tortes",
   ],
+  Barbeque: ["Barbeque"],
 };
