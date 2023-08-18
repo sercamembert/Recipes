@@ -55,6 +55,7 @@ const page = async ({ params }: PageProps) => {
         defaultSubcategory={decodeURIComponent(params.subcategory)}
         defaultOrder={params.order}
       />
+
       <Recipes recipes={recipes} />
     </div>
   );

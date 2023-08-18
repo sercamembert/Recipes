@@ -8,6 +8,8 @@ import Categories from "./NavCategories";
 import NavbarUser from "./NavbarUser";
 import { getAuthSession } from "@/lib/auth";
 import { User } from "next-auth";
+import { signOut } from "next-auth/react";
+import NavbarWindow from "./NavbarWindow";
 
 const Navbar = async () => {
   const session = await getAuthSession();
@@ -23,61 +25,7 @@ const Navbar = async () => {
 
       <NavbarUser user={session?.user} />
 
-      <Sheet>
-        <SheetTrigger asChild className="block lg:hidden ml-auto">
-          <div className="w-12 h-12 bg-primary text-white flex items-center justify-center rounded-md cursor-pointer hover:brightness-75 ease-in-out duration-200">
-            <Menu className="w-8 h-8" />
-          </div>
-        </SheetTrigger>
-        <SheetContent className="bg-rose w-full sm:w-[400px] " side="right">
-          <div className="flex flex-col items-center justify-start h-full font-secoundary text-3xl pt-20">
-            <Link
-              href="/"
-              className="p-4 w-full text-center hover:brightness-75 ease-in-out duration-200 bg-rose"
-            >
-              Home
-            </Link>
-            <Link
-              href="/"
-              className="p-4 w-full text-center hover:brightness-75 ease-in-out duration-200 bg-rose"
-            >
-              Categories
-            </Link>
-            <Link
-              href="/"
-              className="p-4 w-full text-center hover:brightness-75 ease-in-out duration-200 bg-rose "
-            >
-              Newsletter
-            </Link>
-            <div className="w-3/4 border-b border-dark m-2"></div>
-            <Link
-              href="/sign-in"
-              className="p-4 w-full text-center hover:brightness-75 ease-in-out duration-200 bg-rose"
-            >
-              Sign in
-            </Link>
-            <Link
-              href="/"
-              className="p-4 w-full text-center hover:brightness-75 ease-in-out duration-200 bg-rose"
-            >
-              Add recipe
-            </Link>
-            <Link
-              href="/"
-              className="p-4 w-full text-center hover:brightness-75 ease-in-out duration-200 bg-rose"
-            >
-              Settings
-            </Link>
-            <div className="w-3/4 border-b border-dark m-2"></div>
-            <div className="flex gap-4 w-3/4 justify-center pt-4">
-              <Instagram className="cursor-pointer" />
-              <Facebook className="cursor-pointer" />
-              <Twitter className="cursor-pointer" />
-              <Youtube className="cursor-pointer" />
-            </div>
-          </div>
-        </SheetContent>
-      </Sheet>
+      <NavbarWindow user={session?.user} />
     </div>
   );
 };

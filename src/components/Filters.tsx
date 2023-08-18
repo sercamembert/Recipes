@@ -31,7 +31,7 @@ const Filters: React.FC<FiltersProps> = ({
       >
         clear filters
       </Link>
-      <div className="filters bg-rose py-1 flex gap-5">
+      <div className="filters bg-rose py-1 flex flex-col sm:flex-row gap-x-5">
         <div>
           <NavigationMenu>
             <NavigationMenuList>
@@ -60,15 +60,13 @@ const Filters: React.FC<FiltersProps> = ({
             </NavigationMenuList>
           </NavigationMenu>
         </div>
-        <div className="flex gap-3">
-          <div className="flex items-center justify-center gap-1">
+        <div className="flex gap-3 ">
+          <div className="flex items-center justify-center gap-1 pl-4">
             <input
               type="radio"
-              checked={defaultOrder === "default" && true}
+              checked={defaultOrder === "auto" && true}
               onChange={() => {
-                router.push(
-                  `/recipes/${category}/${defaultSubcategory}/default`
-                );
+                router.push(`/recipes/${category}/${defaultSubcategory}/auto`);
               }}
             />
             <p className="text-sm">Random</p>

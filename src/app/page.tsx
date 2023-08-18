@@ -6,6 +6,7 @@ import bbqImg from "@/img/categories/bbq.png";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import RecommendedRecipes from "@/components/RecommendedRecipes";
+import Link from "next/link";
 
 export default async function Home() {
   const homeRecipe = await db.recipe.findFirst({
@@ -63,9 +64,11 @@ export default async function Home() {
           <p className="text-xl font-medium">
             Surprise your friends with great barbeque recipes!
           </p>
-          <Button variant={"bbq"} className="w-[100px] font-semibold">
-            Check
-          </Button>
+          <Link href={"/recipes/Barbeque/default/auto"}>
+            <Button variant={"bbq"} className="w-[100px] font-semibold">
+              Check
+            </Button>
+          </Link>
         </div>
       </div>
       <RecommendedRecipes recipes={recommendedRecipes} />

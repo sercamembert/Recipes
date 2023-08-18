@@ -19,8 +19,13 @@ interface UserAccountNavProps {
 const NavbarUser = ({ user }: UserAccountNavProps) => {
   return (
     <div className="ml-auto gap-2 hidden lg:flex items-center">
-      <div className="w-12 h-12 bg-primary text-white flex items-center justify-center rounded-md cursor-pointer hover:brightness-75 ease-in-out duration-200">
-        <Plus />
+      <div className="w-12 h-12 bg-primary text-white rounded-md cursor-pointer hover:brightness-75 ease-in-out duration-200">
+        <Link
+          href="/create"
+          className="w-full h-full flex items-center justify-center"
+        >
+          <Plus />
+        </Link>
       </div>
       <NavigationMenu className="hover:bg-rose hidden lg:block py-2">
         <NavigationMenuList>
