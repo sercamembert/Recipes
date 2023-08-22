@@ -36,10 +36,10 @@ const Filters: React.FC<FiltersProps> = ({
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-xl uppercase">
+                <NavigationMenuTrigger className="text-xl uppercase font-secoundary">
                   Subcategories
                 </NavigationMenuTrigger>
-                <NavigationMenuContent className="border-rose bg-rose p-3">
+                <NavigationMenuContent className="border-rose bg-rose pl-4">
                   <ul className="flex flex-col w-[174px]">
                     {categories[category]?.map((subcategory, index) => (
                       <Link
