@@ -1,7 +1,5 @@
 "use client";
 import { FC, useState } from "react";
-import { Command, CommandInput } from "./ui/Command";
-import { CommandList } from "cmdk";
 import { Input } from "./ui/Input";
 import { Search } from "lucide-react";
 import { useRouter } from "next/navigation";
@@ -16,7 +14,8 @@ const Searchbar: FC<SearchbarProps> = ({}) => {
   };
 
   const handleSearch = () => {
-    router.push(`/search/${input}`);
+    if (input === "") return;
+    router.push(`/search/${input}/default/auto`);
   };
 
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
