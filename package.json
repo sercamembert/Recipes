@@ -60,6 +60,7 @@
     "nanoid": "^4.0.2",
     "next": "13.4.4",
     "next-auth": "^4.22.1",
+    "pdfjs-dist": "^3.4.120",
     "postcss": "8.4.23",
     "react": "18.2.0",
     "react-dom": "18.2.0",

@@ -1,11 +1,8 @@
-import Image from "next/image";
 import React from "react";
 import Logo from "./ui/Logo";
 import { Input } from "./ui/Input";
 import { Button } from "@/components/ui/Button";
 import { ArrowRight } from "lucide-react";
-
-interface Props {}
 
 const Footer = () => {
   return (
@@ -34,23 +31,30 @@ const Footer = () => {
 
             <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
               <li>
-                <a href="#" className="mr-4 hover:underline md:mr-6 ">
-                  About
+                <a
+                  href="/statue.pdf"
+                  className="mr-4 hover:underline md:mr-6"
+                  target="_blank"
+                >
+                  Statue
                 </a>
               </li>
               <li>
-                <a href="#" className="mr-4 hover:underline md:mr-6">
+                <a
+                  href="https://www.unilevernotices.com/privacy-notices/usa-english.html"
+                  target="_blank"
+                  className="mr-4 hover:underline md:mr-6"
+                >
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="#" className="mr-4 hover:underline md:mr-6 ">
-                  Licensing
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:underline">
-                  Contact
+                <a
+                  href="https://www.unilevernotices.com/cookie-notices/united-kingdom-english.html"
+                  target="_blank"
+                  className="hover:underline"
+                >
+                  Cookie notice
                 </a>
               </li>
             </ul>
