@@ -1,7 +1,7 @@
 import { getAuthSession } from "@/lib/auth";
 import { db } from "@/lib/db";
-import { z } from "zod";
 import { DeleteCreatedValidator } from "@/lib/validators/created";
+import { z } from "zod";
 
 export async function PATCH(req: Request) {
   try {
@@ -15,6 +15,34 @@ export async function PATCH(req: Request) {
       return new Response("Unauthorized", { status: 401 });
     }
 
+    // Delete associated ingredients
+    await db.ingredient.deleteMany({
+      where: {
+        recipeId: id,
+      },
+    });
+
+    // Delete associated steps
+    await db.step.deleteMany({
+      where: {
+        recipeId: id,
+      },
+    });
+
+    // Delete associated favourites
+    await db.favourite.deleteMany({
+      where: {
+        recipeId: id,
+      },
+    });
+
+    await db.comment.deleteMany({
+      where: {
+        recipeId: id,
+      },
+    });
+
+    // Delete the recipe
     await db.recipe.delete({
       where: {
         id: id,

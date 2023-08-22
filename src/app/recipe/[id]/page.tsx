@@ -52,6 +52,15 @@ const page = async ({ params }: PageProps) => {
     take: 4,
   });
 
+  const removeRecipe = async (id: string) => {
+    await db.recipe.delete({
+      where: {
+        id,
+        authorId: session?.user.id,
+      },
+    });
+  };
+
   return (
     <div className="w-full mt-5 mb-44 flex flex-col">
       <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-5">

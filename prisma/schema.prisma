@@ -59,14 +59,14 @@ model Ingredient {
   name     String
   amount   Int
   unit     String
-  recipe   Recipe @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+  recipe   Recipe @relation(fields: [recipeId], references: [id])
   recipeId String
 }
 
 model Step {
   id       String @id @default(cuid())
   content  String @db.Text
-  recipe   Recipe @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+  recipe   Recipe @relation(fields: [recipeId], references: [id])
   recipeId String
 }
 
@@ -95,13 +95,13 @@ model Comment {
   updatedAt DateTime @updatedAt
   author    User     @relation(fields: [authorId], references: [id])
   authorId  String
-  recipe    Recipe   @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+  recipe    Recipe   @relation(fields: [recipeId], references: [id])
   recipeId  String
 }
 
 model Favourite {
   id       String @id @default(cuid())
-  recipe   Recipe @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+  recipe   Recipe @relation(fields: [recipeId], references: [id])
   recipeId String
   user     User   @relation(fields: [userId], references: [id])
   userId   String

@@ -67,7 +67,7 @@ const RecipeInfo = ({ session, recipe }: Props) => {
       });
     },
     onSuccess: async () => {
-      redirect("/");
+      router.push("/");
     },
   });
 
