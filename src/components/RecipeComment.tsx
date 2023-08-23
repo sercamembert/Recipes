@@ -19,18 +19,18 @@ const RecipeComment = ({ comments, recipeId }: Props) => {
     <div className="w-full  flex flex-col gap-4">
       <h1 className="text-2xl font-secoundary">Comments</h1>
       {comments.map((comment, index) => (
-        <div key={index} className="flex gap-2">
+        <div key={index} className="flex gap-2 w-full">
           <Avatar>
             <AvatarImage src={comment.author.image ?? ""} />
           </Avatar>
-          <div className="flex flex-col gap-0">
+          <div className="flex flex-col gap-0 w-[85%]">
             <p className="text-sm font-semibold">
               {comment.author.name}{" "}
               <span className="font-light ml-1">
                 {formatTimeToNow(new Date(comment.createdAt))}
               </span>
             </p>
-            <p className="text-sm">{comment.text}</p>
+            <p className="text-sm break-words w-full">{comment.text}</p>
           </div>
         </div>
       ))}

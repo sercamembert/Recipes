@@ -13,13 +13,15 @@ const Ingredients = ({ ingredients }: Props) => {
       {ingredients.map((ingredient, index) => (
         <div
           key={index}
-          className="w-full items-center flex justify-between border-b border-dark px-2 mb-4 pb-1"
+          className="w-full items-center flex  justify-between border-b border-dark px-2 mb-4 pb-1 gap-6"
         >
-          <div className="flex gap-1 items-center">
+          <div className="flex gap-1 items-center w-[70%]">
             <Checkbox />
-            <p>{ingredient.name}</p>
+            <div className="whitespace-pre-line w-full break-words">
+              {ingredient.name}
+            </div>
           </div>
-          <div className="w-[110px] flex items-start">
+          <div className="w-[30%] flex items-start">
             <p>
               {ingredient.amount} {ingredient.unit}
             </p>

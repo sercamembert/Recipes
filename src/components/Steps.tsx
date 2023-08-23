@@ -13,7 +13,7 @@ const Steps = ({ steps }: Props) => {
       {steps.map((step, index) => (
         <div key={index} className="flex flex-col gap-1">
           <h1 className="text-xl font-semibold">Step {index + 1}</h1>
-          <p className="text-lg">{step.content}</p>
+          <p className="text-lg break-words">{step.content}</p>
         </div>
       ))}
     </div>

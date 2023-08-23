@@ -72,8 +72,8 @@ const RecipeInfo = ({ session, recipe }: Props) => {
   });
 
   return (
-    <div className="flex flex-col gap-1">
-      <h1 className="font-secoundary text-2xl">{recipe.title}</h1>
+    <div className="flex flex-col gap-1 w-full">
+      <h1 className="font-secoundary text-2xl break-words">{recipe.title}</h1>
       <p className="text-xl">Author: {recipe.author?.name}</p>
       <p className="text-sm">
         Posted {formatTimeToNow(new Date(recipe.createdAt))}
