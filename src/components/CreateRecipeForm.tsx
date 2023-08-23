@@ -356,7 +356,7 @@ const CreateRecipeForm: FC<CreateRecipeFormProps> = ({ user }) => {
                   step={1}
                   onValueChange={(e) => {
                     setPeoplesAmt(e[0]);
-                    setValue("peoples", peoplesAmt);
+                    setValue("peoples", e[0]);
                   }}
                   className="w-full sm:w-[65%]"
                 />
