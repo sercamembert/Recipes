@@ -94,6 +94,13 @@ const CreateRecipeForm: FC<CreateRecipeFormProps> = ({ user }) => {
         if (err.response?.status === 401) {
           return loginToast();
         }
+        if (err.response?.status === 402) {
+          return toast({
+            title: "There was a problem",
+            description: "You cant create more than 20 recipes.",
+            variant: "destructive",
+          });
+        }
 
         return toast({
           title: "There was a problem",

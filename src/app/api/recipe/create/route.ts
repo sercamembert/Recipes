@@ -24,6 +24,18 @@ export async function POST(req: Request) {
       return new Response("Unauthorized", { status: 401 });
     }
 
+    const userRecipes = await db.recipe.findMany({
+      where: {
+        authorId: session.user.id,
+      },
+    });
+
+    if (userRecipes.length >= 20) {
+      return new Response("You cant create more than 20 recipes.", {
+        status: 402,
+      });
+    }
+
     const recipe = await db.recipe.create({
       data: {
         image,
@@ -58,7 +70,6 @@ export async function POST(req: Request) {
 
     return new Response(recipe.id, { status: 200 });
   } catch (error) {
-    console.log(error);
     if (error instanceof z.ZodError) {
       return new Response(error.message, { status: 400 });
     }
