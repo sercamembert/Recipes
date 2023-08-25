@@ -40,6 +40,9 @@ const page = async () => {
             }}
           >
             Favourites
+            <p className="text-sm text-center lowercase font-semibold">
+              {favouriteRecipes.length} recipes
+            </p>
           </h1>
         </div>
         {favouriteRecipes.length == 0 ? (

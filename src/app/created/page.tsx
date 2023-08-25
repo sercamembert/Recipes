@@ -40,6 +40,9 @@ const page = async () => {
             }}
           >
             Created Recipes
+            <p className="text-sm text-center lowercase font-semibold">
+              {createdRecipes.length} recipes
+            </p>
           </h1>
         </div>
         {createdRecipes.length == 0 ? (
