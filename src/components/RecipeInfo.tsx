@@ -47,9 +47,11 @@ interface Props {
 
 const RecipeInfo = ({ session, recipe }: Props) => {
   const { loginToast } = useCustomToast();
+  const [isRequesting, setIsRequesting] = useState(false);
   const router = useRouter();
   const { mutate: removeRecipes } = useMutation({
     mutationFn: async ({ id }: DeleteCreatedRequest) => {
+      setIsRequesting(true);
       const payload: DeleteCreatedRequest = { id };
       const { data } = await axios.patch("/api/remove/created", payload);
       return data;
@@ -65,6 +67,12 @@ const RecipeInfo = ({ session, recipe }: Props) => {
         description: "We cant delete your recipe, please try again later.",
         variant: "destructive",
       });
+    },
+    onMutate: () => {
+      setIsRequesting(true);
+    },
+    onSettled: () => {
+      setIsRequesting(false);
     },
     onSuccess: async () => {
       router.push("/");
@@ -90,7 +98,7 @@ const RecipeInfo = ({ session, recipe }: Props) => {
       {recipe.authorId === session?.user.id && (
         <AlertDialog>
           <AlertDialogTrigger className="w-[40px] mt-2 ">
-            <Button variant="rose" size={"sm"}>
+            <Button variant="rose" size={"sm"} disabled={isRequesting}>
               <Trash2 />
             </Button>
           </AlertDialogTrigger>
