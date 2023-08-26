@@ -13,19 +13,12 @@ export const categories: CategoryData = {
   ],
   Soups: ["Cream Soups", "Vegetable Soups", "Meat Soups", "Cold Soups"],
   Salads: ["Vegetable Salads", "Fruit Salads", "Pasta Salads", "Meat Salads"],
-  Snacks: [
-    "Meat Snacks",
-    "Vegetarian Snacks",
-    "Bread Snacks",
-    "Puff Pastry Snacks",
-    "Sweet Snacks",
-  ],
+  Snacks: ["Meat Snacks", "Vegetarian Snacks", "Bread Snacks", "Sweet Snacks"],
   Desserts: [
     "Fruit Desserts",
     "Chocolate Desserts",
     "Ice Cream Desserts",
     "Milk-based Desserts",
-    "No-Bake Desserts",
   ],
   Cakes: [
     "Traditional Cakes",
