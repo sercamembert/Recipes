@@ -50,6 +50,7 @@ const CreateRecipeForm: FC<CreateRecipeFormProps> = ({ user }) => {
   const [prepTime, setPrepTime] = useState<number>(5);
   const [peoplesAmt, setPeoplesAmt] = useState<number>(1);
   const { loginToast } = useCustomToast();
+  const [isRequesting, setIsRequesting] = useState(false);
   const router = useRouter();
   const {
     handleSubmit,
@@ -86,6 +87,7 @@ const CreateRecipeForm: FC<CreateRecipeFormProps> = ({ user }) => {
         subcategory,
         title,
       };
+      setIsRequesting(true);
       const { data } = await axios.post(`/api/recipe/create`, payload);
       return data;
     },
@@ -108,6 +110,12 @@ const CreateRecipeForm: FC<CreateRecipeFormProps> = ({ user }) => {
           variant: "destructive",
         });
       }
+    },
+    onMutate: () => {
+      setIsRequesting(true);
+    },
+    onSettled: () => {
+      setIsRequesting(false);
     },
     onSuccess: (data) => {
       router.push(`/recipe/${data}`);
@@ -556,7 +564,9 @@ const CreateRecipeForm: FC<CreateRecipeFormProps> = ({ user }) => {
                   <ChevronLeft color="#000000" /> Prev step
                 </Button>
 
-                <Button variant="rose">Finish</Button>
+                <Button variant="rose" disabled={isRequesting}>
+                  {isRequesting ? "Submitting..." : "Finish"}
+                </Button>
               </div>
             )}
           </div>
