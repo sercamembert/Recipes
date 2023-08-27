@@ -14,6 +14,7 @@ interface Props {
 const CreateComment = ({ recipeId }: Props) => {
   const [input, setInput] = useState<string>("");
   const router = useRouter();
+  const [isRequesting, setIsRequesting] = useState(false);
 
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -27,6 +28,7 @@ const CreateComment = ({ recipeId }: Props) => {
 
   const { mutate: postComment, isLoading } = useMutation({
     mutationFn: async ({ recipeId, text }: CommentRequest) => {
+      setIsRequesting(true);
       const payload: CommentRequest = {
         recipeId,
         text,
@@ -36,6 +38,7 @@ const CreateComment = ({ recipeId }: Props) => {
       return data;
     },
     onError: () => {
+      setIsRequesting(false);
       return toast({
         title: "Something went wrong",
         description: "Comment could not be posted, please try again later",
@@ -43,6 +46,7 @@ const CreateComment = ({ recipeId }: Props) => {
       });
     },
     onSuccess: () => {
+      setIsRequesting(false);
       router.refresh();
       setInput("");
     },
@@ -64,6 +68,7 @@ const CreateComment = ({ recipeId }: Props) => {
         variant={"rose"}
         size={"sm"}
         className="mt-2 text-xs"
+        disabled={isRequesting}
         onClick={() => {
           if (!input) return;
           postComment({
