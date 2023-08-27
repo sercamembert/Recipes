@@ -74,12 +74,6 @@ const NavbarUser = ({ user }: UserAccountNavProps) => {
                   Favourites
                 </Link>
 
-                <Link
-                  href="/settings"
-                  className=" font-medium cursor-pointer bg-rose py-2 px-4 hover:brightness-75 ease-in-out duration-200"
-                >
-                  Settings
-                </Link>
                 {user && (
                   <p
                     onClick={() => {
