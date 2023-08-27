@@ -495,7 +495,7 @@ const CreateRecipeForm: FC<CreateRecipeFormProps> = ({ user }) => {
                         placeholder="Step content"
                         value={stepData.content}
                         {...register(`steps.${index}.content`, {
-                          required: "Step content is required", // Add any other validation rules here
+                          required: "Step content is required",
                         })}
                         onChange={(e) => {
                           const updatedSteps = [...watchedSteps];

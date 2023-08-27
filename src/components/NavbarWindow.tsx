@@ -1,8 +1,6 @@
 "use client";
 import React from "react";
 import { Facebook, Instagram, Menu, Twitter, Youtube } from "lucide-react";
-import Link from "next/link";
-import Searchbar from "./Searchbar";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/Sheet";
 import { signOut } from "next-auth/react";
 import { User } from "next-auth";

@@ -5,7 +5,6 @@ import favouritesHeaderImg from "@/img/favourites/favourite-header.png";
 import Image from "next/image";
 import FavouriteRecipes from "@/components/FavouriteRecipes";
 import { redirect } from "next/navigation";
-import Footer from "@/components/Footer";
 
 const page = async () => {
   const session = await getAuthSession();

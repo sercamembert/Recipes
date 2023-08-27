@@ -17,7 +17,6 @@ const page = async ({ params }: PageProps) => {
   let recipes;
 
   if (params.subcategory === "default") {
-    // Pobierz przepisy tylko na podstawie kategorii
     recipes = await db.recipe.findMany({
       where: {
         category: params.category,
@@ -25,11 +24,9 @@ const page = async ({ params }: PageProps) => {
       orderBy: {
         createdAt: params.order === "newest" ? "desc" : undefined,
         prepTime: params.order === "shortest" ? "asc" : undefined,
-        // Możesz dodać inne pola do sortowania, takie jak popularność
       },
     });
   } else {
-    // Pobierz przepisy na podstawie kategorii i podkategorii
     recipes = await db.recipe.findMany({
       where: {
         category: params.category,
@@ -38,7 +35,6 @@ const page = async ({ params }: PageProps) => {
       orderBy: {
         createdAt: params.order === "newest" ? "desc" : undefined,
         prepTime: params.order === "shortest" ? "asc" : undefined,
-        // Możesz dodać inne pola do sortowania, takie jak popularność
       },
     });
   }

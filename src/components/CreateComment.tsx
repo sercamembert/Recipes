@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Textarea } from "./ui/Textarea";
 import { Button } from "./ui/Button";
-import { CommentValidator, CommentRequest } from "@/lib/validators/comment";
+import { CommentRequest } from "@/lib/validators/comment";
 import { useRouter } from "next/navigation";
 import { toast } from "@/hooks/use-toast";
 import axios from "axios";
@@ -15,14 +15,13 @@ const CreateComment = ({ recipeId }: Props) => {
   const [input, setInput] = useState<string>("");
   const router = useRouter();
 
-  const textareaRef = useRef<HTMLTextAreaElement>(null); // Create a reference to the Textarea element
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
-    // Update the height of the Textarea whenever the input changes
     if (textareaRef.current) {
-      textareaRef.current.style.height = "auto"; // Reset the height to allow recalculating the height
+      textareaRef.current.style.height = "auto";
       textareaRef.current.style.height =
-        textareaRef.current.scrollHeight + "px"; // Set the height to fit the content
+        textareaRef.current.scrollHeight + "px";
     }
   }, [input]);
 

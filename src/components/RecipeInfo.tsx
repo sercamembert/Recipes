@@ -18,7 +18,7 @@ import { useMutation } from "@tanstack/react-query";
 import { DeleteCreatedRequest } from "@/lib/validators/created";
 import axios, { AxiosError } from "axios";
 import useCustomToast from "@/hooks/use-custom-toast";
-import { redirect, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { toast } from "@/hooks/use-toast";
 import {
   AlertDialog,

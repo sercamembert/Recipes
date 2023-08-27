@@ -4,8 +4,6 @@ import Searchbar from "./Searchbar";
 import Categories from "./NavCategories";
 import NavbarUser from "./NavbarUser";
 import { getAuthSession } from "@/lib/auth";
-import { User } from "next-auth";
-import { signOut } from "next-auth/react";
 import NavbarWindow from "./NavbarWindow";
 
 const Navbar = async () => {
@@ -17,7 +15,6 @@ const Navbar = async () => {
 
       <Categories />
 
-      {/* TODO: Searchbar */}
       <Searchbar />
 
       <NavbarUser user={session?.user} />

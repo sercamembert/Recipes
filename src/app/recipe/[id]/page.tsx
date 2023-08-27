@@ -1,5 +1,3 @@
-import CreateComment from "@/components/CreateComment";
-import Footer from "@/components/Footer";
 import Ingredients from "@/components/Ingredients";
 import RecipeComment from "@/components/RecipeComment";
 import RecipeInfo from "@/components/RecipeInfo";
@@ -51,15 +49,6 @@ const page = async ({ params }: PageProps) => {
     },
     take: 4,
   });
-
-  const removeRecipe = async (id: string) => {
-    await db.recipe.delete({
-      where: {
-        id,
-        authorId: session?.user.id,
-      },
-    });
-  };
 
   return (
     <div className="w-full mt-5 mb-44 flex flex-col max-w-full">
