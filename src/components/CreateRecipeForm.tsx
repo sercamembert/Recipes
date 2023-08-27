@@ -517,8 +517,9 @@ const CreateRecipeForm: FC<CreateRecipeFormProps> = ({ user }) => {
                     {/* Validation error message */}
                     <p className="pl-3 text-xs text-red-600">
                       {stepData.content.length < 10 ||
-                        (stepData.content.length > 1200 &&
-                          errors.steps?.[index]?.content?.message)}
+                      stepData.content.length >= 1200
+                        ? errors.steps?.[index]?.content?.message
+                        : null}
                     </p>
                   </div>
                 ))}
