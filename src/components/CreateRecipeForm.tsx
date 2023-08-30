@@ -120,6 +120,7 @@ const CreateRecipeForm: FC<CreateRecipeFormProps> = ({ user }) => {
     onSuccess: (data) => {
       router.push(`/recipe/${data}`);
       return toast({
+        variant: "default",
         description: "Your recipe has been created.",
       });
     },
@@ -226,6 +227,14 @@ const CreateRecipeForm: FC<CreateRecipeFormProps> = ({ user }) => {
                       setUploadedImage(res[0].fileUrl);
                       setValue("image", res[0].fileUrl);
                     }
+                  }}
+                  onUploadError={(res) => {
+                    return toast({
+                      variant: "destructive",
+                      title: "There was a problem",
+                      description:
+                        "Image could not be uploaded, please try again later.",
+                    });
                   }}
                 />
                 <p className="px-1 text-xs text-red-600">
