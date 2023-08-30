@@ -20,13 +20,13 @@ const HomeRecipe = ({ recipe }: Props) => {
         src={recipe?.image || ""}
         alt="home recipe image"
         onClick={() => router.push(`/recipe/${recipe?.id}`)}
-        className="w-full hover:brightness-75 ease-in-out duration-200 cursor-pointer  max-h-[400px] sm:max-h-[380px] md:max-h-[515px] lg:max-h-[407px] xl:max-h-[485px] rounded-t-md lg:rounded-none lg:rounded-l-md"
+        className="w-full lg:w-[50%] xl:w-[60%] hover:brightness-75 ease-in-out duration-200 cursor-pointer  max-h-[400px] sm:max-h-[380px] md:max-h-[515px] lg:max-h-[407px] xl:max-h-[485px] rounded-t-md lg:rounded-none lg:rounded-l-md"
       />
       <div className="bg-light p-10 flex flex-col justify-center gap-3 lg:w-[90%] xl:w-[70%] rounded-b-md lg:rounded-none lg:rounded-r-md">
         <h1 className="font-secoundary text-2xl font-semibold lg:text-4xl">
           {recipe?.title}
         </h1>
-        <p className="lg:mr-16">
+        <p className="lg:mr-16 ">
           Experience a culinary masterpiece with our Chicken & Chorizo
           Jambalaya. Let the enticing blend of flavors take you on a journey of
           pure comfort and irresistible taste!
